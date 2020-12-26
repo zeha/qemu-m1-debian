@@ -1,7 +1,7 @@
 quick notes:
 
 * use aarch64 native homebrew, obviously. should be installed into `/opt/homebrew`
-* use qemu from my branch, see qemu.rb.patch below to patch the homebrew formula. install with `brew install -vs --HEAD qemu`
+* use qemu from my branch, see `qemu.rb.patch` to patch the homebrew formula. then install with `brew install -vs --HEAD qemu`
 * codesigning appears to be broken, so resign the binary with:
    ```sh
    xcrun codesign --entitlements ~/Source/qemu/accel/hvf/entitlements.plist --force -s - qemu-system-aarch64
