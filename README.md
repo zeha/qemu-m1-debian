@@ -40,6 +40,7 @@ used versions:
 
 
 links:
-* https://qemu.readthedocs.io/en/latest/system/index.html
-* https://patchwork.kernel.org/project/qemu-devel/list/?series=391797
-* https://github.com/Homebrew/brew/issues/9082#issuecomment-727247739
+* qemu manual: https://qemu.readthedocs.io/en/latest/system/index.html
+* hvf patches: https://patchwork.kernel.org/project/qemu-devel/list/?series=391797
+* codesign cache bug: https://github.com/Homebrew/brew/issues/9082#issuecomment-727247739
+* brew codesigning implementation: https://github.com/Homebrew/brew/pull/8799/files
