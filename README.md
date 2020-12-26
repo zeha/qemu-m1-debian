@@ -37,3 +37,9 @@ used versions:
 * xcode 12.2 full, xcode-select -p pointing to xcode, not clt
 * macOS 11.1 20C69
 * qemu 5.2.0 + master + hvf aarch64 patches, copy is at https://github.com/zeha/qemu/tree/plus-hvf-aarch64 rev e0ecc801be7993c8702ec096aad6bcfdee2b86fc
+
+
+links:
+* https://qemu.readthedocs.io/en/latest/system/index.html
+* https://patchwork.kernel.org/project/qemu-devel/list/?series=391797
+* https://github.com/Homebrew/brew/issues/9082#issuecomment-727247739
