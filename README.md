@@ -26,7 +26,7 @@ quick notes:
    At the installer's grub prompt (blue menu) - in the Cocoa window:
    * edit `Install` option:
    * press `e` to edit the option
-   * replace `quiet` with `console=tty1,ttyAMA0` (cursor keys and `ctrl-e` work in this editor)
+   * replace `quiet` with `console=tty1,ttyAMA0` (cursor keys and `ctrl-e` work in this editor -- see `screenshot-grub-console.png`)
    * `ctrl-x` boots the installer. Should have console on Cocoa output.
    * Debian installer is smart enough (!) to copy `console=...` into the final installation.
 * `ssh -R 2244:127.0.0.1:22 somehome.example.org` is useful after installation
