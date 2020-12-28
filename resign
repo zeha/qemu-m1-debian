@@ -1,0 +1,13 @@
+#!/bin/sh
+BIN=$(which qemu-system-aarch64)
+echo "I: current status"
+codesign -v "$BIN"
+codesign -d -r- -v "$BIN"
+cp "$BIN" qemu-system-aarch64
+echo "I: resigning"
+codesign -s - -f qemu-system-aarch64 -v --preserve-metadata=entitlements
+rm -f "$BIN"
+cp qemu-system-aarch64 "$BIN"
+rm -f qemu-system-aarch64
+echo "I: new status"
+codesign -d -r- -v "$BIN"

@@ -25,7 +25,7 @@ fi
 
 ulimit -c 0  # disable coredumps
 qemu-system-aarch64 \
-    -M virt -accel hvf \
+    -M virt,gic-version=3,highmem=off,iommu=smmuv3,accel=hvf \
     -device pci-bridge,id=pci.0,chassis_nr=2 \
     -device virtio-scsi-pci,bus=pci.0,addr=0x5,id=scsihw0 \
     -drive file="${QEMU_SHARE}"/edk2-aarch64-code.fd,if=pflash,format=raw \
@@ -37,6 +37,7 @@ qemu-system-aarch64 \
     -device virtio-gpu-pci \
     -display cocoa \
     -m 4096 \
-    -cpu max \
+    -cpu cortex-a72 \
     -smp 2 \
-    -serial mon:stdio
+    -serial mon:stdio \
+    -d guest_errors,cpu_reset

@@ -2,18 +2,7 @@ quick notes:
 
 * use aarch64 native homebrew, obviously. should be installed into `/opt/homebrew`
 * use qemu from my branch, see `qemu.rb.patch` to patch the homebrew formula. then install with `brew install -vs --HEAD qemu`
-* codesigning appears to be broken, so resign the binary with:
-   ```sh
-   xcrun codesign -s - -f $(which qemu-system-aarch64) -v --preserve-metadata=entitlements
-   ```
-   note: might run into codesign bug, so maybe sign a copy instead ... (thanks apple)
-   ```sh
-   cp qemu-system-aarch64 qemu-system-aarch64.tmp
-   xcrun codesign -s - -f qemu-system-aarch64.tmp -v --preserve-metadata=entitlements
-   rm -f qemu-system-aarch64
-   cp qemu-system-aarch64.tmp qemu-system-aarch64
-   rm -f qemu-system-aarch64.tmp
-   ```
+* codesigning appears to be broken somehow, run `./resign` to fix it
 * run `./boot.sh`, which should download a debian installer and boot into it. just restart `boot.sh` again to boot from harddisk image after install
 * qemu doesnt seem to reboot or exit properly, so sometimes you'll need `pkill -9 qemu-system-aarch64`
 * qemu enables userspace networking by default, so you'll have internet in the VM
